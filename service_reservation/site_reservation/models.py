@@ -41,7 +41,7 @@ cnx = mysql.connector.connect(host=host, database=database, user=user, password=
 cursor = cnx.cursor()
 
 # Définition de l'URL de l'API et du token
-url = 'https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=dkr&radius=300&radiusUnit=KM&hotelSource=ALL'
+url = 'https://test.api.amadeus.com/v1/re0qlUyWD4G8pfVKRduyDWgSC1hGGzference-data/locations/hotels/by-city?cityCode=dkr&radius=300&radiusUnit=KM&hotelSource=ALL'
 token = '0qlUyWD4G8pfVKRduyDWgSC1hGGz'
 
 # Ajout du token à l'en-tête de la requête
