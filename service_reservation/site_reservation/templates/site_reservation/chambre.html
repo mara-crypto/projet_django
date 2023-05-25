@@ -111,10 +111,10 @@
                                 <a href="{% url 'about'%}"      class="nav-item nav-link">About</a>
                                 <a href="{% url 'voiture'%}"    class="nav-item nav-link">Voiture</a>
                                 <a href="#"                     class="nav-item nav-link" active>Chambre</a>
-                                <a href="{% url 'restaurant'%}" class="nav-item nav-link">>Restaurant</a>
+                                <a href="{% url 'restaurant'%}" class="nav-item nav-link">Restaurant</a>
                                 <a href="{% url 'contact'%}"    class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="https://freewebsitecode.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
+                            <a href="{% url 'connection'%}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">SE CONNECTER<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </nav>
                 </div>
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button id="re" class="btn btn-primary w-100"><a href="{% url 'search_chambre'%}">RECHERCHER</a></button>
+                            <button id="re" class="btn btn-primary w-100">RECHERCHER</button>
                         </div>
                     </div>
                 </div>

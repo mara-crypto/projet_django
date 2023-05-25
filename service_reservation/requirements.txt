@@ -1,8 +1,12 @@
 asgiref==3.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 Django==4.2.1
 =======
 Django==4.1.1
 >>>>>>> origin/daour
+=======
+Django==4.2.1
+>>>>>>> origin/khalil
 mysqlclient==2.1.1
 sqlparse==0.4.4
