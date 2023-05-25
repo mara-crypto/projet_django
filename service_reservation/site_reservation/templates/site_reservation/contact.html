@@ -64,11 +64,11 @@
                         <div class="col-lg-7 px-5 text-start">
                             <div class="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i class="fa fa-envelope text-primary me-2"></i>
-                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">daoursambandaw@gmail.com</p>
                             </div>
                             <div class="h-100 d-inline-flex align-items-center py-2">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+012 345 6789</p>
+                                <p class="mb-0">774454430</p>
                             </div>
                         </div>
                         <div class="col-lg-5 px-5 text-end">
@@ -94,10 +94,10 @@
                                 <a href="{% url 'about'%}"      class="nav-item nav-link active">About</a>
                                 <a href="{% url 'voiture'%}"    class="nav-item nav-link">Voiture</a>
                                 <a href="{% url 'chambre'%}"    class="nav-item nav-link">Chambre</a>
-                                <a href="{% url 'restaurant'%}" class="nav-item nav-link">>Restaurant</a>
+                                <a href="{% url 'restaurant'%}" class="nav-item nav-link">Restaurant</a>
                                 <a href="{% url 'contact'%}"    class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="https://freewebsitecode.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
+                            <a href="{% url 'connection'%}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </nav>
                 </div>
@@ -108,14 +108,14 @@
 
 
         <!-- Page Header Start -->
-        <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
+        <div class="container-fluid page-header mb-5 p-0" style="background-image: url({%static 'reservation/image/carousel-1.jpg'%});">
             <div class="container-fluid page-header-inner py-5">
                 <div class="container text-center pb-5">
                     <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item"><a href="#">HOME</a></li>
-                            <li class="breadcrumb-item"><a href="#">PAGES</a></li>
+
                             <li class="breadcrumb-item text-white active" aria-current="page">CONTACT</li>
                         </ol>
                     </nav>
@@ -303,29 +303,11 @@
                                 <!-- <a class="btn btn-link" href="">Event & Party</a>
                                 <a class="btn btn-link" href="">GYM & Yoga</a> -->
                             </div>
-                        </div>;,,,,,,,,
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="https://freewebsitecode.com">Your Site Name</a>, All Right Reserved. 
-							
-							
-							Designed By
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
             <br>
         </div>
