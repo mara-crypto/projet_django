@@ -52,20 +52,3 @@ with open("donnees_restos.json", "w", encoding="utf-8") as fichier_json:
     json.dump(donnees, fichier_json, indent=4, ensure_ascii=False)
 
 
-
-
-with open("create_resto.sql", "w") as fichier_sql:
-    with open("donnees_restos.json", "r", encoding="utf-8") as fichier_json:
-        donnees = json.load(fichier_json)
-
-    for resto in donnees:
-        emplacement = resto["emplacement"]
-        type_table = resto["type_table"]
-        couleur_nappe = resto["couleur_nappe"]
-        cout_reservation = resto["cout_reservation"]
-        imgs = resto["imgs"]
-
-        query = f"INSERT INTO resto (emplacement, type_table, couleur_nappe, cout_reservation, imgs) VALUES ('{emplacement}', '{type_table}', '{couleur_nappe}', '{cout_reservation}', '{imgs}');"
-        fichier_sql.write(query + "\n")
-
-        print(query)

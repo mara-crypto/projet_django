@@ -12,7 +12,7 @@ CREATE TABLE resto (
     type_table VARCHAR(50)  NOT NULL,
     couleur_nappe VARCHAR(50)  NOT NULL,
     cout_reservation VARCHAR(50)  NOT NULL,
-    imgs VARCHAR(255)  NOT NULL
+    imgs VARCHAR(50)  NOT NULL
 );
 
 DROP TABLE IF EXISTS service;
