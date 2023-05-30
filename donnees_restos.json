@@ -1,0 +1,702 @@
+[
+    {
+        "emplacement": "en privée1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "doré",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table ronde",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "balcon1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "doré",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon1.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "doré",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table ronde",
+        "couleur_nappe": "doré",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "doré",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table ronde",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table ronde",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "balcon1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "noir",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table ronde",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "doré",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table ronde",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table ronde",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "balcon1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table ronde",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table ronde",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table ronde",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "noir",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "doré",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table ronde",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "noir",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "balcon1",
+        "type_table": "table ronde",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon1.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table ronde",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "doré",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "noir",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table ronde",
+        "couleur_nappe": "doré",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table ronde",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table ronde",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table ronde",
+        "couleur_nappe": "noir",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "noir",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "doré",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "doré",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table ronde",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "vue de mer2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer2.jpg"
+    },
+    {
+        "emplacement": "en privée2",
+        "type_table": "table rectangle",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/privé.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "balcon2",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon2.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table ronde",
+        "couleur_nappe": "blanc",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    },
+    {
+        "emplacement": "vue de mer1",
+        "type_table": "table ronde",
+        "couleur_nappe": "bleu",
+        "cout_reservation": "150$",
+        "imgs": "static/photo/mer/mer.jpg"
+    },
+    {
+        "emplacement": "en publique2",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/publique2.jpg"
+    },
+    {
+        "emplacement": "balcon1",
+        "type_table": "table de bistriot",
+        "couleur_nappe": "rouge",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon1.jpg"
+    },
+    {
+        "emplacement": "en publique1",
+        "type_table": "table rectangle",
+        "couleur_nappe": "noir",
+        "cout_reservation": "50$",
+        "imgs": "static/photo/publique/pubique1.jpg"
+    },
+    {
+        "emplacement": "balcon1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "doré",
+        "cout_reservation": "130$",
+        "imgs": "static/photo/balcon/balcon1.jpg"
+    },
+    {
+        "emplacement": "en privée1",
+        "type_table": "table haute et mange-debout",
+        "couleur_nappe": "noir",
+        "cout_reservation": "100$",
+        "imgs": "static/photo/privée/en_privé.jpg"
+    }
+]

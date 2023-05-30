@@ -8,7 +8,11 @@ urlpatterns = [
         path("voiture", views.voiture, name='voiture'),
         path("chambre", views.chambre, name='chambre'),
         path("restaurant", views.restaurant, name='restaurant'),
+        path("detailvoiture", views.detailvoiture, name='detailvoiture'),
+        path("connection", views.connection, name='connection'),
         path("recherche_voiture", views.recherche_voiture, name='recherche_voiture'),
-        path("search_chambre", views.search_chambre, name='search_chambre'),
-        # path("connection", views.connection, name='connection')
+        path("reserve_resto", views.reserve_resto, name='reserve_resto'),
+        path("search_chambre", views.search_chambre, name='search_chambre')
+
+
     ] 

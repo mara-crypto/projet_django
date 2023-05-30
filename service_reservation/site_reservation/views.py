@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import Hotel
 # Create your views here.
 
 def index(request):
@@ -48,8 +49,11 @@ def detailvoiture(request):
 #     template = loader.get_template("site_reservation/connection.html")
 #     return HttpResponse(template.render(context,request))
 
+def reserve_resto(request):
+    context={}
+    template = loader.get_template("site_reservation/reserve_resto.html")
+    return HttpResponse(template.render(context,request))
 
-from .models import Hotel
 
 def search_chambre(request):
     hotels = Hotel.objects.all()
