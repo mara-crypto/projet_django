@@ -46,3 +46,8 @@ def connection(request):
     context={}
     template = loader.get_template("site_reservation/connection.html")
     return HttpResponse(template.render(context,request))
+
+def reserve_resto(request):
+    context={}
+    template = loader.get_template("site_reservation/reserve_resto.html")
+    return HttpResponse(template.render(context,request))
