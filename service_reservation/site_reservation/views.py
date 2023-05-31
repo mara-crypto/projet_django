@@ -1,7 +1,6 @@
-from django.shortcuts import render
-
-
-# Create your views here.
+from django.shortcuts import render, redirect
+from .forms import RechercheForm
+from .models import Suite
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -45,49 +44,31 @@ def detailvoiture(request):
 
 def connection(request):
     context={}
-    template = loader.get_template("site_reservation/connection.html")
+    template = loader.get_template("site_reservation/connecter.html")
+    return HttpResponse(template.render(context,request))
+
+def detail(request):
+    context={}
+    template = loader.get_template("site_reservation/detail.html")
     return HttpResponse(template.render(context,request))
 
 
 
-# import requests
-# from datetime import datetime
-# def search_results(request):
-#     date_debut_str = request.GET.get('date_debut')
-#     date_fin_str = request.GET.get('date_fin')
+def recherche_view(request):
+    form = RechercheForm()
+    context = {'form': form}
+    return render(request, 'chambre.html', context)
 
-#     if date_debut_str and date_fin_str:
-#         date_debut = datetime.strptime(date_debut_str, '%m/%d/%Y').date()
-#         date_fin = datetime.strptime(date_fin_str, '%m/%d/%Y').date()
+def resultat_view(request):
+    if request.method == 'GET':
+        hotel = request.GET.get('hotel', '')
+        nombre_lit = request.GET.get('nombre_lit', '')
+        salle_bain = request.GET.get('salle_bain', '')
 
-#         # Effectuer une requête HTTP vers l'API 'api-car' avec les dates de début et de fin
-#         response = requests.get('https://localhost:8080/api/cars', params={'date_debut': date_debut_str, 'date_fin': date_fin_str})
+        # Effectuer la recherche dans la base de données en utilisant l'ORM de Django
+        resultats = Suite.objects.filter(hotel__icontains=hotel, nombre_lit=nombre_lit, salle_bain=salle_bain)
 
-#         if response.status_code == 200:
-#             voitures = response.json()
-#             context = {'voitures': voitures, 'date_debut': date_debut, 'date_fin': date_fin}
-#             return render(request, 'search_results.html', context)
-#         else:
-#             return render(request, 'error.html')
-
-#     return render(request, 'search_results.html')
-
-
-
-import json
-
-def search_results(request):
-    # Charger le fichier JSON
-    with open('donnees_voitures.json') as json_file:
-        data = json.load(json_file)
-
-    date_debut_str = request.GET.get('date_debut')
-    date_fin_str = request.GET.get('date_fin')
-
-    # Accéder aux données pertinentes dans le fichier JSON
-    voitures = data['voitures']  # Remplacez 'voitures' par la clé appropriée dans votre fichier JSON
-
-    # Effectuer d'autres opérations avec les données
-
-    context = {'voitures': voitures}
-    return render(request, 'search_results.html', context)
+        context = {'resultats': resultats}
+        return render(request, 'resultat.html', context)
+    else:
+        return redirect('chambre')
