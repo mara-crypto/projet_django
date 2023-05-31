@@ -49,6 +49,20 @@ def detailvoiture(request):
 #     template = loader.get_template("site_reservation/connection.html")
 #     return HttpResponse(template.render(context,request))
 
+# def reserve_resto(request):
+#     context={}
+#     template = loader.get_template("site_reservation/reserve_resto.html")
+#     return HttpResponse(template.render(context,request))
+
+
+# from .models import Resto
+
+# def afficher_emplacements(request):
+#     emplacements = Resto.objects.all()
+#     return render(request, 'reserve_resto.html', {'reserve_resto': emplacements})
+
+
+from django.db import connection
 def reserve_resto(request):
     context={}
     template = loader.get_template("site_reservation/reserve_resto.html")
