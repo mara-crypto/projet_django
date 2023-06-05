@@ -100,7 +100,7 @@
                                 <a href="{% url 'restaurant'%}" class="nav-item nav-link">Restaurant</a>
                                 <a href="{% url 'contact'%}" class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="{% url 'connection'%}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">SE CONNECTER<i
+                            <a href="{% url 'connecter'%}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">SE CONNECTER<i
                                     class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </nav>
@@ -208,20 +208,18 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-4">
-                    {% for resto in resto %}
+                    {% for resto in restaurants %}
                         <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
                             <div class="room-item shadow rounded overflow-hidden">
                                 <div class="position-relative">
-                                    <img class="img-fluid" src="{% static ''|add:resto.img }" alt="">
+                                    <img class="img-fluid w-100" style="height: 200px;" src="{% static ''|add:resto.imgs %}" alt="">
                                 </div>
                                 <div class="p-4 mt-2">
                                     <div class="d-flex justify-content-between mb-3">
                                         <h5 class="mb-0">{{ resto.type_table }} / {{ resto.couleur_nappe }}</h5>
                                     </div>
                                     <div class="d-flex justify-content-between">
-                                        <!-- <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{% url 'detail_voiture' voiture.id %}">Voir détails</a> -->
-                                        <!-- <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">$ {{ voiture.cout_journalier_location }} J/jour</a> -->
-                                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">$ {{ voiture.cout_journalier_location }} J/jour</a>
+                                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">$ {{ resto.cout_reservation }} J/jour</a>
                                         <h5 class="mb-0">{{ resto.cout_reservation }} </h5>
                                     </div>
                                 </div>

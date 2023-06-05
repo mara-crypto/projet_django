@@ -42,7 +42,7 @@ def detailvoiture(request):
     template = loader.get_template("site_reservation/detailvoiture.html")
     return HttpResponse(template.render(context,request))
 
-def connection(request):
+def connecter(request):
     context={}
     template = loader.get_template("site_reservation/connection.html")
     return HttpResponse(template.render(context,request))
@@ -64,7 +64,7 @@ from django.db import connection
 def reserve_resto(request):
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM resto")
-        restaurant = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]
-        context = {"restaurant": restaurant}
+        restaurants = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]
+        context = {"restaurants": restaurants}
         template = loader.get_template("site_reservation/reserve_resto.html")
         return HttpResponse(template.render(context, request))
