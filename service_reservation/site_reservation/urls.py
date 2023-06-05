@@ -10,9 +10,5 @@ urlpatterns = [
         path("restaurant", views.restaurant, name='restaurant'),
         path("detailvoiture", views.detailvoiture, name='detailvoiture'),
         path("connection", views.connection, name='connection'),
-        path("recherche_voiture", views.recherche_voiture, name='recherche_voiture'),
-        path("reserve_resto", views.reserve_resto, name='reserve_resto'),
-        path("search_chambre", views.search_chambre, name='search_chambre')
-
-
+        path("reserve_resto", views.reserve_resto, name='reserve_resto')
     ] 
