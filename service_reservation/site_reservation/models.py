@@ -3,18 +3,18 @@ from django.db import models
 # Create your models here.
 
 
-from django.db import models
+# from django.db import models
 
-class Voiture(models.Model):
-    marque = models.CharField(max_length=100)
-    modele = models.CharField(max_length=100)
-    nombre_places = models.IntegerField()
-    boite_vitesse = models.CharField(max_length=100)
-    carburant = models.CharField(max_length=100)
-    climatisation = models.BooleanField(default=False)
-    couleur = models.CharField(max_length=100)
-    annee_production = models.IntegerField()
-    cout_journalier_location = models.IntegerField()
+# class Voiture(models.Model):
+#     marque = models.CharField(max_length=100)
+#     modele = models.CharField(max_length=100)
+#     nombre_places = models.IntegerField()
+#     boite_vitesse = models.CharField(max_length=100)
+#     carburant = models.CharField(max_length=100)
+#     climatisation = models.BooleanField(default=False)
+#     couleur = models.CharField(max_length=100)
+#     annee_production = models.IntegerField()
+#     cout_journalier_location = models.IntegerField()
 
 
 
