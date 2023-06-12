@@ -107,3 +107,11 @@
     
 })(jQuery);
 
+document.getElementById("reserver").addEventListener("click", function() {
+    var boutonsDiv = document.getElementById("boutons");
+    boutonsDiv.innerHTML = `
+        <button id="confirmer">Confirmer</button>
+        <button id="annuler">Annuler</button>
+    `;
+    boutonsDiv.style.display = "block";
+});

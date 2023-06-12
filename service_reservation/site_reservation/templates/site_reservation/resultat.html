@@ -179,7 +179,9 @@
                                 </div>
                                 <p class="text-body mb-3">{{ resultat.description }}</p>
                                 <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{% url 'detail'%}">Voir plus</a>
+                                    <!--a class="btn btn-sm btn-primary rounded py-2 px-4" href="{% url 'detail'%}">Voir plus</a-->
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="{% url 'detail' suite_id=resultat.id %}">Voir plus</a>
+
                                     <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">${{ resultat.prix }}/Nuit</a>
                                 </div>
                             </div>

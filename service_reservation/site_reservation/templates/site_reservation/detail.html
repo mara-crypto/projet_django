@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hotelier - Hotel HTML Template</title>
+    <title>BOKING LUXURY - DETAILS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -132,30 +132,41 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                        <h6 class="section-title text-start text-primary text-uppercase">A propos de la suite</h6>
-                        <h1 class="mb-4">Suite presidentielle <span class="text-primary text-uppercase"> -Radisson Blu</span></h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <pre>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h6 class="section-title text-start text-primary text-uppercase">A propos de la suite</h6>
+                <h1 class="mb-4">{{ suite.nom_suite }}</h1>
+                <p class="mb-4">{{ suite.description }}</p>
+                <p class="mb-4">Nos suites dispose d’une décoration unique avec des équipements modernes répondant aux meilleures normes internationales.</p>
+                <p class="mb-4">Nos suites ont été pensés pour vous offrir un univers intime et chaleureux lors de vos séjours de courte ou longue durée.</p>
+                <h2 class="mb-4">ETAGE : <span class="text-primary text-uppercase">{{ suite.etage }}</span></h2>
+                <h2 class="mb-4">PRIX : <span class="text-primary text-uppercase">{{ suite.prix }}</span>$/Nuit</h2>
 
-                            
-                        </pre>
-                        <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight" style="background-color: #FEA116;">Reserver maintenant</a>
+                <form method="POST" action="{% url 'login' %}?next={% url 'paiement' %}">
+                    
+                    {% csrf_token %}
+                    <!-- Champs pour les informations de réservation -->
+                    <input type="hidden" name="date_arrivee" value="{{ date_arrivee }}">
+                    <input type="hidden" name="date_depart" value="{{ date_depart }}">
+                    <input type="hidden" name="suite_id" value="{{ suite.id }}">
+                    <!-- Autres champs ou éléments de formulaire -->
+                
+                    <button type="submit" class="btn btn-primary">Réserver maintenant</button>
+                </form>
+                
+            </div>
 
-            
-                    </div>
-
-                    <div class="col-lg-5 ">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{%static 'reservation/image/a1.jpg'%}" style="margin-top: 30%;">
-
-                    </div>
-                </div>
+            <div class="col-lg-5">
+                <img src="{{ suite.image.url }}" alt="{{ suite.nom_suite }}" class="img-fluid">
+                <!--img class="img-fluid" src="{{ resultat.image.url }}" alt="{{ resultat.nom_suite }}" style="margin-top: 30%;"-->
             </div>
         </div>
-        <!-- About End -->
+    </div>
+</div>
+<!-- About End -->
+
 
        <!-- Newsletter Start -->
         <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -192,7 +203,7 @@
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Contact</h6>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Location, City, Country</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>774454430</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>daoursambandaw@gmail.com</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>infoluxury@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -265,7 +276,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="{% static 'reservation/js/main.js'%}"></script>
-
+    
 </body>
 
 </html>
