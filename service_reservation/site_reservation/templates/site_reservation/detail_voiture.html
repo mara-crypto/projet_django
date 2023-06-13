@@ -18,6 +18,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -115,7 +117,20 @@
                                 <a href="{% url 'restaurant'%}" class="nav-item nav-link">>Restaurant</a>
                                 <a href="{% url 'contact'%}"    class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="https://freewebsitecode.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
+                                {% if request.session.user %}
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.session.user_nom }}</button>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item active" href="#">Mon Profil</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'logout' %}">Se Déconnecter</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#">Mes réservations</a></li>
+                                        </ul>
+                                    </div>
+                                {% else %}
+                                    <a href="{% url 'login' %}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
+                                {% endif %}
+                        
                         </div>
                     </nav>
                 </div>
@@ -199,32 +214,7 @@
 
 
         <!-- Detail Start -->
-        <!-- <div class="container">
-            {% for voiture in voitures %}
-                <div class="card mb-3" style="max-width: 100%;">
-                    <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{% static ''|add:voiture.image_path %}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                        <h5 class="card-title">{{ voiture.marque }}/{{ voiture.modele }}</h5>
-                        <p class="card-text">{{ voiture.modele }}</p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.couleur }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.nombre_places }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.boite_vitesse }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.carburant }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.climatisation }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.annee_production }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ voiture.cout_journalier_location }}</small></p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>  -->
-
-
+ 
         <div class="card mb-3" style="max-width: 100%;">
             {% for voiture in voitures %}
                 <div class="row g-0">
@@ -277,7 +267,29 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
-                        <button class="btn btn-sm btn-outline-dark bg-red text-white"><a href="{% url 'reservationVoiture'%}">Réserver maintenant !</a></button>
+                        {% if  request.session.user %}
+                            <button class="btn btn-sm btn-outline-dark bg-red text-white"><a href="{% url 'reservationVoiture'%}">Réserver maintenant !</a></button>
+                        {% else %}
+                            <button class="btn btn-sm btn-outline-dark bg-red text-white"><a href="{% url 'login'%}">Réserver maintenant !</a></button>
+                            <div class="modal" tabindex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Connection Obligatoire</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Vous devez vous connecter avant de pouvoir reserver</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
+                                      <button type="button" class="btn btn-primary"><a href="{% url 'login'%}">Se connecter</a></button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        {% endif  %}
+
                         <button class="btn btn-sm btn-outline-secondary bg-orange text-white"><a href="...">Retour en arrière</a></button>
                     </div>
                     </div>
@@ -285,68 +297,6 @@
                 </div>
             {% endfor %}
         </div>
-
-
-        <!-- <div class="row container mx-auto">
-            {% for voiture in voitures %}
-                <div class="d-flex accomodation_item">
-                    <div class="flex-shrink-0">
-                        <img src="{% static ''|add:voiture.image_path %}" width="350px" alt="...">
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="flex-grow-1 ms-5 ">
-                            <h3>{{ voiture.marque }}</h3>
-                            <div class="mb-4 flex-grow-1 mt-5">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <i class="bi bi-palette fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Couleur: {{ voiture.couleur }}</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <i class="bi bi-gear fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Boîte à vitesse: {{ voiture.boite_vitesse }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <i class="bi bi-snow2 fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Climatisation: {% if voiture.climatisation %}Oui{% else %}Non{% endif %}</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <i class="bi bi-calendar3 fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Année de production: {{ voiture.annee_production }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <i class="bi bi-card-text fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Marque: {{ voiture.marque }}</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <i class="bi bi-journal-text fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Modèle: {{ voiture.modele }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <i class="bi bi-people fs-3 text-purple"></i>
-                                        <span class="fs-5 text-dark ms-2">Nombre de places: {{ voiture.nombre_places }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between mt-4">
-                                <button class="btn btn-sm btn-outline-dark bg-red text-white"><a href="...">Réserver maintenant !</a></button>
-                                <button class="btn btn-sm btn-outline-secondary bg-orange text-white"><a href="...">Retour en arrière</a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        
-         -->
-        
-        
 
         <!-- DETAIL End -->
         
