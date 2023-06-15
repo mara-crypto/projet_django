@@ -1,12 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width
-    , initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'reservation/css/style_paiement.css'%}">
     <title> BOOKING LUXURY</title>
 </head>
 
@@ -23,7 +23,7 @@
         
     </div>
 
-    <script src="qrcode.min.js"></script>
+    <script src="{% static 'reservation/js/qrcode.min.js'%}"></script>
     <script>
         let valider = document.getElementById('valider')
         let om = document.getElementById('OM')

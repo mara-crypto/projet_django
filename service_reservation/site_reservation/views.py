@@ -320,7 +320,12 @@ def login(request):
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM utilisateur WHERE email = %s", [email])
             user = cursor.fetchone()
+
             if user is not None and check_password(password, user[3]):
+                print(user[3])
+                print('\n')
+                print('*****************************')
+                print(password)
                 request.session['user'] = { 'id' : user[0], 'nom' : user[1], 'email': user[2]}
                 redirect_to = request.POST.get('next') or reverse('index')
                 return redirect(redirect_to)
@@ -382,7 +387,7 @@ def reservationVoiture(request):
     request.session['voiture_id'] = voiture_id
     return render(request, "site_reservation/reservationVoiture.html", context)
 
-def confirmationVoiture(request):
+def paiement(request):
     date_debut = request.session.get('date_debut')
     date_fin = request.session.get('date_fin')
     print(date_debut, date_fin)
@@ -397,23 +402,17 @@ def confirmationVoiture(request):
     user_id = user['id']
     voiture_id = request.session.get('voiture_id')
 
-    if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            nom = form.cleaned_data['nom']
-            with connection.cursor() as cursor:
-                cursor.execute("INSERT INTO reservation_voiture (id, utilisateur_id, date_reservation, date_rendu, id_voiture) VALUES (null, %s, %s, %s, %s)", [user_id ,date_debut ,date_fin, voiture_id])
-                connection.commit()
+    with connection.cursor() as cursor:
+        cursor.execute("INSERT INTO reservation_voiture (id, utilisateur_id, date_reservation, date_rendu, id_voiture) VALUES (null, %s, %s, %s, %s)", [user_id ,date_debut ,date_fin, voiture_id])
+        connection.commit()
+    
+    context ={}
+    print(voiture_id)
+    return render(request, 'site_reservation/paiement.html', context)
             
-            context ={}
-            print(voiture_id)
-            return render(request, 'site_reservation/reservationVoiture.html', context)
-            
-    else:
-        form = None
 
-    context = {'form': form}
-    return render(request, 'site_reservation/reservationVoiture.html', context)
+    # context = {'form': form}
+    # return render(request, 'site_reservation/reservationVoiture.html', context)
 
 
 def mesreservation(request):
@@ -422,7 +421,7 @@ def mesreservation(request):
     print(user_id)
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM reservation_voiture WHERE utilisateur_id = %s", [user_id])
-        reservations = cursor.fetchall()
+        reservations = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]
 
     context = {'reservations': reservations}
     return render(request, 'site_reservation/mesreservation.html', context)

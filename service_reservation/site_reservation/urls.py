@@ -12,11 +12,11 @@ urlpatterns = [
     path("recherche_voiture",                   views.recherche_voiture,      name='recherche_voiture'),
     path("detail_voiture/<int:voiture_id>/",    views.detail_voiture,         name='detail_voiture'),
     path("reservationVoiture",                  views.reservationVoiture,     name='reservationVoiture'),
-    path("confirmationVoiture",                 views.confirmationVoiture,    name='confirmationVoiture'),
+    path("paiement",                            views.paiement,               name='paiement'),
     path("search_chambre",                      views.search_chambre,         name='search_chambre'),
     path('login',                               views.login,                  name='login'),
     path('signup',                              views.signup,                 name='signup'),
-    path('logout',                             views.logout_view,            name='logout'),
-    path('mesreservation',                     views.mesreservation,       name='mesreservation')
+    path('logout',                              views.logout_view,            name='logout'),
+    path('mesreservation',                      views.mesreservation,         name='mesreservation')
 
 ]
