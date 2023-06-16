@@ -375,19 +375,11 @@ def detail_voiture(request, voiture_id):
     request.session['voiture_id'] = voiture_id
     return render(request, "site_reservation/detail_voiture.html", context)
 
-def reservationVoiture(request):
-    date_debut = request.session.get('date_debut')
-    date_fin = request.session.get('date_fin')
-    voiture_id = request.session.get('voiture_id')
 
-    form = ReservationForm()
-    context = {'form': form}
-    request.session['date_debut'] = date_debut
-    request.session['date_fin'] = date_fin
-    request.session['voiture_id'] = voiture_id
-    return render(request, "site_reservation/reservationVoiture.html", context)
 
-def paiement(request):
+
+def send_confirmation_email(request):
+
     date_debut = request.session.get('date_debut')
     date_fin = request.session.get('date_fin')
     print(date_debut, date_fin)
@@ -400,19 +392,55 @@ def paiement(request):
 
     user = request.session.get('user')
     user_id = user['id']
+    name = user['nom']
+    email = user['email']
     voiture_id = request.session.get('voiture_id')
 
     with connection.cursor() as cursor:
         cursor.execute("INSERT INTO reservation_voiture (id, utilisateur_id, date_reservation, date_rendu, id_voiture) VALUES (null, %s, %s, %s, %s)", [user_id ,date_debut ,date_fin, voiture_id])
         connection.commit()
-    
+        reservation_id = cursor.lastrowid
+
+
+    # Chemin vers le template HTML
+    template_path = 'site_reservation/email.html'
+
+    # Contexte de données pour le template
+    context = {
+        'name': name,
+        'reservation_id': reservation_id
+    }
+
+    # Charger le contenu du template avec le contexte
+    html_content = render_to_string(template_path, context)
+
+    # Créer l'objet EmailMessage pour le message
+    email_message = EmailMessage(
+        'Confirmation de réservation',
+        html_content,
+        settings.DEFAULT_FROM_EMAIL,  # Adresse e-mail de l'expéditeur par défaut
+        [email] # Liste des adresses e-mail des destinataires
+    )
+    email_message.content_subtype = 'html'  # Indiquer que le contenu est au format HTML
+
+    # Envoyer l'e-mail
+    email_message.send()
+
+    # Afficher une page de confirmation ou rediriger vers une autre URL
+    return render(request, 'site_reservation/mesreservation.html')
+
+
+
+def paiement(request):
     context ={}
-    print(voiture_id)
     return render(request, 'site_reservation/paiement.html', context)
             
 
-    # context = {'form': form}
-    # return render(request, 'site_reservation/reservationVoiture.html', context)
+
+
+
+
+
 
 
 def mesreservation(request):
@@ -428,13 +456,24 @@ def mesreservation(request):
 
 
 
+from django.shortcuts import render
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.conf import settings
 
 
 
+def reservationVoiture(request):
+    date_debut = request.session.get('date_debut')
+    date_fin = request.session.get('date_fin')
+    voiture_id = request.session.get('voiture_id')
 
-
-
-
+    form = ReservationForm()
+    context = {'form': form}
+    request.session['date_debut'] = date_debut
+    request.session['date_fin'] = date_fin
+    request.session['voiture_id'] = voiture_id
+    return render(request, "site_reservation/reservationVoiture.html", context)
 
 
 

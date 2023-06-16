@@ -17,6 +17,8 @@ urlpatterns = [
     path('login',                               views.login,                  name='login'),
     path('signup',                              views.signup,                 name='signup'),
     path('logout',                              views.logout_view,            name='logout'),
-    path('mesreservation',                      views.mesreservation,         name='mesreservation')
+    path('mesreservation',                      views.mesreservation,         name='mesreservation'),
+    path('send_confirmation_email',                      views.send_confirmation_email,         name='send_confirmation_email')
+    
 
 ]
