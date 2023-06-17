@@ -11,4 +11,6 @@ urlpatterns = [
         path("detailvoiture", views.detailvoiture, name='detailvoiture'),
         path("connecter", views.connecter, name='connecter'),
         path("reserve_resto", views.reserve_resto, name='reserve_resto')
+        path("connecter", views.connecter, name='connecter'),
+        path("reserve_resto", views.reserve_resto, name='reserve_resto')
     ] 
