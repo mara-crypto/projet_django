@@ -1,0 +1,169 @@
+{% extends './base.html'%}
+{% load static %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'reservation/image/v13.jpg' %});">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center pb-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Location de Voiture</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase" style="background-color: initial;">
+                    <li class="breadcrumb-item"><a href="{% url 'index'%}">Home</a></li>                        
+                    <li class="breadcrumb-item"><a href="{% url 'contact'%}">Contact</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'about'%}">About</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Booking Start -->
+<div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="bg-white shadow" style="padding: 35px;">
+            <form method="GET" action="{% url 'recherche_voiture' %}">
+                <div class="row g-2">
+                    <div class="col-md-10">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <div class="date" id="date1" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" name="date_debut" placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="date" id="date2" data-target-input="nearest"> 
+                                    <input type="text" class="form-control datetimepicker-input" name="date_fin" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select" id="hour1">
+                                    <option selected disabled>Heure</option>
+                                    <option value="0">00:00</option>
+                                    <option value="1">01:00</option>
+                                    <option value="2">02:00</option>
+                                    <option value="3">03:00</option>
+                                    <option value="4">04:00</option>
+                                    <option value="5">05:00</option>
+                                    <!-- Ajoutez les options pour les heures jusqu'à 23 -->
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select class="form-select" id="hour2">
+                                    <option selected disabled>Heure</option>
+                                    <option value="0">00:00</option>
+                                    <option value="1">01:00</option>
+                                    <option value="2">02:00</option>
+                                    <option value="3">03:00</option>
+                                    <option value="4">04:00</option>
+                                    <option value="5">01:00</option>
+                                    <!-- Ajoutez les options pour les heures jusqu'à 23 -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">Rechercher</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Booking End -->
+
+
+<!-- Detail Start -->
+
+<div class="card mb-3" style="max-width: 100%;">
+    {% for voiture in voitures %}
+        <div class="row g-0">
+        <div class="col-md-4">
+            <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
+            <img src="{% static ''|add:voiture.image_path %}" width="350px" alt="...">
+        </div>
+        <div class="col-lg-8">
+            <div class="card-body">
+            <!-- <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+            <h3>{{ voiture.marque }}</h3>
+            <div class="mb-4 flex-grow-1 mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <i class="bi bi-palette fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Couleur: {{ voiture.couleur }}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="bi bi-gear fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Boîte à vitesse: {{ voiture.boite_vitesse }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <i class="bi bi-snow2 fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Climatisation: {% if voiture.climatisation %}Oui{% else %}Non{% endif %}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="bi bi-calendar3 fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Année de production: {{ voiture.annee_production }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <i class="bi bi-card-text fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Marque: {{ voiture.marque }}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="bi bi-journal-text fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Modèle: {{ voiture.modele }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <i class="bi bi-people fs-3 text-purple"></i>
+                        <span class="fs-5 text-dark ms-2">Nombre de places: {{ voiture.nombre_places }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                {% if  request.session.user %}
+                    <button class="btn btn-sm btn-outline-dark bg-red text-white"><a href="{% url 'send_confirmation_email'%}">Réserver maintenant !</a></button>
+                {% else %}
+                    <button class="btn btn-sm btn-outline-dark bg-red text-white"><a href="{% url 'login'%}">Réserver maintenant !</a></button>
+                    <div class="modal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Connection Obligatoire</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Vous devez vous connecter avant de pouvoir reserver</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
+                                <button type="button" class="btn btn-primary"><a href="{% url 'login'%}">Se connecter</a></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif  %}
+
+                <button class="btn btn-sm btn-outline-secondary bg-orange text-white"><a href="...">Retour en arrière</a></button>
+            </div>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- DETAIL End -->
+
+
+
+{% endblock %}
