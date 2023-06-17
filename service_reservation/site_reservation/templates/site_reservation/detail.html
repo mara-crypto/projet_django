@@ -98,8 +98,19 @@
                                 <a href="{% url 'restaurant'%}" class="nav-item nav-link">Restaurant</a>
                                 <a href="{% url 'contact'%}"    class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="https://freewebsitecode.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">SE CONNECTER<i class="fa fa-arrow-right ms-3"></i></a>
-                        </div>
+                            {% if request.session.user %}
+                            <div class="dropdown nav-item nav-link">
+                                <button class="btn btn-primary dropdown-toggle rounded-0 py-4 px-md-5 d-none d-lg-block" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.session.user.nom }}</button>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item active" href="#">Mon Profil</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'logout_view' %}">Se Déconnecter</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Mes réservations</a></li>
+                                </ul>
+                            </div>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
+                        {% endif %}                        
                     </nav>
                 </div>
             </div>
@@ -144,17 +155,12 @@
                 <h2 class="mb-4">ETAGE : <span class="text-primary text-uppercase">{{ suite.etage }}</span></h2>
                 <h2 class="mb-4">PRIX : <span class="text-primary text-uppercase">{{ suite.prix }}</span>$/Nuit</h2>
 
-                <form method="POST" action="{% url 'login' %}?next={% url 'paiement' %}">
-                    
-                    {% csrf_token %}
-                    <!-- Champs pour les informations de réservation -->
-                    <input type="hidden" name="date_arrivee" value="{{ date_arrivee }}">
-                    <input type="hidden" name="date_depart" value="{{ date_depart }}">
-                    <input type="hidden" name="suite_id" value="{{ suite.id }}">
-                    <!-- Autres champs ou éléments de formulaire -->
+                {% if request.session.user %}
+                    <button  type="submit" class="btn btn-primary"><a href="{% url 'paiement'%}">Réserver maintenant</a></button>
+                {% else %}
+                    <a href="{% url 'login'%}">Veuillez vous Connecter avant de poursuivre</a>
+                {% endif %}  
                 
-                    <button type="submit" class="btn btn-primary">Réserver maintenant</button>
-                </form>
                 
             </div>
 
@@ -237,10 +243,10 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="https://freewebsitecode.com">Your Site Name</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="">Your Site Name</a>, All Right Reserved. 
                             
                             
-                            Designed By <a class="border-bottom" href="https://freewebsitecode.com">Free Website Code</a>
+                            Designed By <a class="border-bottom" href="">Free Website Code</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">

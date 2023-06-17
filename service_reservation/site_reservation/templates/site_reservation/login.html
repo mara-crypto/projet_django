@@ -20,10 +20,16 @@
     <script src="../custom-scripts.js" defer></script>
   </head>
   <body>
+    
     <section class="wrapper">
+      {% if message  %}
+        {{message}}
+        {% endif %}
       <div class="form signup">
         <header>S'inscrire</header>
+        
         <form action="{% url 'signup' %}" method="POST">
+
           {% csrf_token %}
           <input type="text" name="full_name" placeholder="Full name" required />
           <input type="email" name="email" placeholder="Email address" required />

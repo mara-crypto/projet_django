@@ -116,8 +116,19 @@
                                 <a href="{% url 'restaurant'%}" class="nav-item nav-link">Restaurant</a>
                                 <a href="{% url 'contact'%}"    class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="{% url 'connection'%}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">SE CONNECTER<i class="fa fa-arrow-right ms-3"></i></a>
-                        </div>
+                            {% if request.session.user %}
+                            <div class="dropdown nav-item nav-link">
+                                <button class="btn btn-primary dropdown-toggle rounded-0 py-4 px-md-5 d-none d-lg-block" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.session.user.nom }}</button>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item active" href="#">Mon Profil</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'logout_view' %}">Se Déconnecter</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Mes réservations</a></li>
+                                </ul>
+                            </div>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Se Connecter<i class="fa fa-arrow-right ms-3"></i></a>
+                        {% endif %}                       
                     </nav>
                 </div>
             </div>
