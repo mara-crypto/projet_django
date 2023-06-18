@@ -1,10 +1,17 @@
 from datetime import datetime
 from django.contrib.auth.hashers import make_password, check_password
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.db import connection
 from django.contrib import messages
 from .forms import ReservationForm
-from .models import Hotel
+from .models import Hotel, Suite
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.conf import settings
+from django.template import loader
+import json
+from django.urls import reverse
+
 
 
 
@@ -56,7 +63,6 @@ def signup(request):
     return render(request, "site_reservation/login.html")
 
 
-from django.urls import reverse
 
 def login(request):
     if request.method == 'POST':
@@ -106,6 +112,8 @@ def recherche_voiture(request):
         request.session['date_debut'] = date_prise_entre
         request.session['date_fin'] = date_rendu_entre
         return render(request, "site_reservation/recherche_voiture.html", context)
+
+
 
 def detail_voiture(request, voiture_id):
     date_debut = request.session.get('date_debut')
@@ -203,10 +211,6 @@ def mesreservation(request):
 
 
 
-from django.shortcuts import render
-from django.core.mail import EmailMessage
-from django.template.loader import render_to_string
-from django.conf import settings
 
 
 
@@ -225,7 +229,6 @@ def reservationVoiture(request):
 
 
 
-import json
 
 def search_results(request):
     # Charger le fichier JSON
@@ -252,10 +255,8 @@ def resultat_view(request):
         date_debut=request.GET.get('date_arrivee')
         date_fin=request.GET.get('date_depart')
 
-
         resultats = Suite.objects.filter(hotel__icontains=hotel, nombre_lit=nombre_lit, salle_bain=salle_bain)
         
-
         context = {'resultats': resultats}
         request.session['hotel']=hotel
         request.session['date_debut']=date_debut
@@ -263,6 +264,7 @@ def resultat_view(request):
         return render(request, 'resultat.html', context)
     else:
         return redirect('chambre')
+
 
 def detail(request, suite_id):
     hotel=request.session.get('hotel')
