@@ -14,17 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>BOOKING LUXURY</title>
-    <link rel="stylesheet" href="{%static 'reservation/css/style_connection.css'%}" />
+    
+    <link rel="stylesheet" href="{%static 'reservation/css/style_connection.css'%}">
     <script src="../custom-scripts.js" defer></script>
   </head>
   <body>
     <section class="wrapper">
       <div class="form signup">
-        <header>Signup</header>
-        <form action="#">
-          <input type="text" placeholder="Full name" required />
-          <input type="text" placeholder="Email address" required />
-          <input type="password" placeholder="Password" required />
+        <header>S'inscrire</header>
+        <form action="#" method="post">
+          {% csrf_token %}
+          <input type="text" class="name" name="name" placeholder="Full name" required />
+          <input type="email" class="email" name="email" placeholder="Email address" required />
+          <input type="password" class="mot_de_passe" name="password" placeholder="Password" required />
+          <input type="text" hidden value="login">
           <div class="checkbox">
             <input type="checkbox" id="signupCheck" name="accept_terms" />
             <label for="signupCheck">J'accepte tous les termes et conditions</label>
@@ -34,11 +37,13 @@
       </div>
 
       <div class="form login">
-        <header>Login</header>
+        <header>Connexion</header>
         <form action="#">
+          {% csrf_token %}
+          {{ form.as_p }}
           <input type="text" placeholder="Email address" required />
           <input type="password" placeholder="Password" required />
-          <a href="#">Forgot password?</a>
+          <a href="#">Mot de passe oublié?</a>
           <input type="submit" value="Login" />
         </form>
         
