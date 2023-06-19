@@ -281,6 +281,19 @@ def detail(request, suite_id):
 
 
 def reserve_resto(request):
+    if request.method == 'POST':
+        type_repas = request.POST.get('type_repas')
+        nb_enfants = request.POST.get('nb_enfants')
+        nb_adultes = request.POST.get('nb_adultes')
+
+        print(type_repas)
+        print(nb_enfants)
+        print(nb_adultes)
+        
+        # Faites quelque chose avec les valeurs récupérées
+        # ...
+        return render(request, 'success.html')
+    
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM resto")
         restaurants = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]

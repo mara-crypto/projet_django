@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,19 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>BOOKING LUXURY</title>
-    
-    <link rel="stylesheet" href="{% static 'reservation/css/style_connection.css' %}">
+    <link rel="stylesheet" href="{%static 'reservation/css/style_connection.css'%}" />
     <script src="../custom-scripts.js" defer></script>
   </head>
   <body>
     <section class="wrapper">
       <div class="form signup">
-        <header>S'inscrire</header>
-        <form action="{% url 'signup' %}" method="POST">
-          {% csrf_token %}
-          <input type="text" name="full_name" placeholder="Full name" required />
-          <input type="email" name="email" placeholder="Email address" required />
-          <input type="password" name="password" placeholder="Password" required />
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" placeholder="Full name" required />
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
           <div class="checkbox">
             <input type="checkbox" id="signupCheck" name="accept_terms" />
             <label for="signupCheck">J'accepte tous les termes et conditions</label>
@@ -37,12 +34,11 @@
       </div>
 
       <div class="form login">
-        <header>Connexion</header>
-        <form action="{% url 'login' %}" method="POST">
-          {% csrf_token %}
-          <input type="email" name="email" placeholder="Email address" required />
-          <input type="password" name="password" placeholder="Password" required />
-          <a href="#">Mot de passe oublié?</a>
+        <header>Login</header>
+        <form action="#">
+          <input type="text" placeholder="Email address" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
           <input type="submit" value="Login" />
         </form>
         
