@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -43,9 +44,25 @@ def detailvoiture(request):
     return HttpResponse(template.render(context,request))
 
 def connecter(request):
+    if request.method == 'POST':
+        
+    # Récupérer les données de la requête POST
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        mot_de_passe = request.POST.get('password')
+        # print("**************************")
+        # print(email)
+        # print(mot_de_passe)
+        
+        # Creer un nouveau utilisateur
+        user = User(username=name,email=email,password=mot_de_passe)
+        user.save()
+        return redirect('restaurant')
+
     context={}
-    template = loader.get_template("site_reservation/connection.html")
+    template = loader.get_template("site_reservation/connecter.html")
     return HttpResponse(template.render(context,request))
+
 
 # def reserve_resto(request):
 #     context={}
@@ -62,9 +79,34 @@ def connecter(request):
 
 from django.db import connection
 def reserve_resto(request):
+    if request.method == 'POST':
+        type_repas = request.POST.get('type_repas')
+        nb_enfants = request.POST.get('nb_enfants')
+        nb_adultes = request.POST.get('nb_adultes')
+
+        print(type_repas)
+        print(nb_enfants)
+        print(nb_adultes)
+        
+        # Faites quelque chose avec les valeurs récupérées
+        # ...
+        return render(request, 'success.html')
+    
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM resto")
         restaurants = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]
         context = {"restaurants": restaurants}
         template = loader.get_template("site_reservation/reserve_resto.html")
         return HttpResponse(template.render(context, request))
+
+    # return render(request, 'site_reservation/reserve_resto.html')
+
+# def reserve_resto(request):
+#     with connection.cursor() as cursor:
+#         cursor.execute("SELECT * FROM resto")
+#         restaurants = [dict(zip([column[0] for column in cursor.description], row)) for row in cursor.fetchall()]
+#         context = {"restaurants": restaurants}
+#         template = loader.get_template("site_reservation/reserve_resto.html")
+#         return HttpResponse(template.render(context, request))
+
+

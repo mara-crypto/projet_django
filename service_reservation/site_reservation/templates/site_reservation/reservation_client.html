@@ -127,138 +127,16 @@
         </div>
         <!-- Page Header End -->
 
-
-        <!-- Booking Start -->
-        <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <form method="post">
-                {% csrf_token %}
-                <div class="bg-white shadow" style="padding: 35px;">
-                    <div class="row g-2">
-                        <div class="col-md-10">
-                            <div class="row g-2">
-                                <div class="col-md-3">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            placeholder="Choisir une date" data-target="#date1" data-toggle="datetimepicker" />
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-3">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div> -->
-                                <div class="col-md-3">
-                                    <select class="form-select" name="type_repas">
-                                        <option selected>Type de repas</option>
-                                        <option value="1">Petit déjeuner</option>
-                                        <option value="2">Déjeuner</option>
-                                        <option value="3">Diner</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select" name="nb_enfants">
-                                        <option selected>Nombre d'enfants</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="3">4</option>
-                                        <option value="3">5</option>
-                                        <option value="3">6</option>
-                                        <option value="3">7</option>
-                                        <option value="3">8</option>
-                                        <option value="3">9</option>
-                                        <option value="3">10</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-select" name="nb_adultes">
-                                        <option selected>Nombre d'adultes</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="3">4</option>
-                                        <option value="3">5</option>
-                                        <option value="3">6</option>
-                                        <option value="3">7</option>
-                                        <option value="3">8</option>
-                                        <option value="3">9</option>
-                                        <option value="3">10</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary w-100">RECHERCHER</button>
-                        </div>
-                    </div>
-                </div>
-                
-                </form>
-            </div>
-        </div>
-        <!-- Booking End -->
-
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h2 class="section-title text-center text-primary ">Liste des emplacements possible</h2><br><br>
+                    <h2 class="section-title text-center text-primary ">DESCRIPTION</h2><br><br>
                 </div>
             </div>
-        </div>
-
-        <!-- Detail Start -->
-        <!-- car Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-4">
-                    {% for resto in restaurants %}
-                        <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="room-item shadow rounded overflow-hidden">
-                                <div class="position-relative">
-                                    <img class="img-fluid w-100" style="height: 200px;" src="{% static ''|add:resto.imgs %}" alt="">
-                                </div>
-                                <div class="p-4 mt-2">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h5 class="mb-0">{{ resto.type_table }} / {{ resto.couleur_nappe }}</h5>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <a class="btn btn-sm btn-dark rounded py-2 px-4" href="#">RESERVER</a>
-                                        <h5 class="mb-0">{{ resto.cout_reservation }} </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <!-- car End -->
-          
+        </div>    
 
 
-        <!-- Newsletter Start -->
-        <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 border rounded p-1">
-                    <div class="border rounded text-center p-1">
-                        <div class="bg-white rounded text-center p-5">
-                            <h4 class="mb-4">S'abonner à notre <span class="text-primary text-uppercase">LETTRE
-                                    D'INFORMATION</span></h4>
-                            <div class="position-relative mx-auto" style="max-width: 400px;">
-                                <input class="form-control w-100 py-3 ps-4 pe-5" type="text"
-                                    placeholder="Entrer votre mail">
-                                <button type="button"
-                                    class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">ENVOYER</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Newsletter Start -->
-
-
+        
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
             <div class="container pb-5">
